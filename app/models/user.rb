@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :bigint           not null, primary key
+#  first_name      :string           not null
+#  last_name       :string           not null
+#  email           :string           not null
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
 class User < ApplicationRecord
 
   attr_reader :password
@@ -9,10 +23,10 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
 
   def self.find_by_credentials(email, password)
-    email = User.find_by(email: email)
+    user = User.find_by(email: email)
 
     return nil if user.nil?
-    user.is_password?(password_digest) ? user : nil
+    user.is_password?(password) ? user : nil
   end
 
   def is_password?(password)
