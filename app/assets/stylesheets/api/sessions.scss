@@ -1,0 +1,62 @@
+// Place all the styles related to the api/sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.signin-box {
+  padding: 5px 0;
+}
+
+.signin-input {
+  padding: 5px;
+  margin: 2px;
+  width: 120px;
+  font-size: 13px;
+}
+
+.signin-button {
+  background-color: #382110;
+  border: 1px solid #382110;
+  color: white;
+  font-weight: normal;
+  border-radius: 3px;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 2px;
+  padding: 5px 12px;
+}
+
+.new-account-box {
+  float: right;
+  width: 280px;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+}
+
+.signup-input {
+  width: 270px;
+  padding: 7px 5px;
+  font-size: 16px;
+  font-weight: lighter;
+  margin: 3px;
+}
+
+.signup-button {
+  padding: 8px;
+  margin: 3px;
+  border: 0px;
+  border-radius: 4px;
+  background-color: #fdd05f;
+  font-size: 18px;
+  line-height: 22px;
+  width: 85px;
+}
