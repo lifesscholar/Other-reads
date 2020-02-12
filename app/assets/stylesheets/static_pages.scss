@@ -2,7 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 h2 {
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: lighter;
 }
 
 input {
@@ -10,4 +11,17 @@ input {
   border-radius: 3px;
   border: #dcd6cc 1px solid;
   color: #333333;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(243,243,235);
+  border-bottom: 1px solid rgb(231,230,225);
+}
+
+.masthead {
+  height: 295px;
+  background-color: rgb(243,243,235);
 }

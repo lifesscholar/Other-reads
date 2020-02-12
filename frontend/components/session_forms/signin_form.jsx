@@ -12,17 +12,22 @@ class SignInForm extends React.Component {
   }
 
   renderErrors () {
-    return (
-      <ul className="session-errors-list">
-        {
-          this.props.errors.map((error, i) => (
-            <li className="session-error" key={`error-${i}`}>
-              {error}
-            </li>
-          ))
-        }
-      </ul> 
-    )
+
+    if (this.props.errors.length > 1) {
+      return (
+        <ul className="session-errors-list">
+          {
+            this.props.errors.map((error, i) => (
+              <li className="session-error" key={`error-${i}`}>
+                {error}
+              </li>
+            ))
+          }
+        </ul> 
+      )
+    } else {
+      return null;
+    }
   }
 
   update(field) {
@@ -36,7 +41,7 @@ class SignInForm extends React.Component {
 
   render() {
     return (
-      <>
+      <div className="signin-box">
         <form 
           onSubmit={this.handleSubmit} 
           className="SignInForm"
@@ -57,7 +62,7 @@ class SignInForm extends React.Component {
           <button type="submit" className="signin-button">Sign In</button>
         </form>
         {this.renderErrors()}
-      </>
+      </div>
     )
   }
 

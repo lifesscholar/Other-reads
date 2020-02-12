@@ -13,12 +13,13 @@ import SignUpFormContainer from "./session_forms/signup_form_container";
 
 const App = () => (
   <div className="content">
-    <header>
+    <nav>
       <h1>Otherreads</h1>
       <SignInFormContainer/>
-    </header>
-    <br/>
-    <SignUpFormContainer/>
+    </nav>
+    <div className="masthead">
+      <SignUpFormContainer/>
+    </div>
   </div>
 );
 
