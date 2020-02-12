@@ -14,7 +14,6 @@ export const signoutCurrentUser = () => ({
 });
 
 export const receiveErrors = errors => {
-  debugger
   return (
       {
       type: RECEIVE_SESSION_ERRORS,
@@ -26,34 +25,15 @@ export const receiveErrors = errors => {
 export const signup = user => dispatch => APIUtil.signup(user)
   .then(user => (dispatch(receiveCurrentUser(user))), 
         err => (dispatch(receiveErrors(err.responseJSON)))
-      );
+    );
 
 
-export const signin = user => dispatch => {
-  // debugger
-  return APIUtil.signin(user)
-  .then(user => {
-    // debugger
-    return dispatch(receiveCurrentUser(user));
-  }, 
-    err => {
-      // debugger
-      return dispatch(receiveErrors(err.responseJSON))
-    });
-};
+export const signin = user => dispatch => APIUtil.signin(user)
+  .then(user => (dispatch(receiveCurrentUser(user))), 
+        err => (dispatch(receiveErrors(err.responseJSON)))
+    );
 
-export const signout = () => dispatch => { 
-  debugger 
-  return APIUtil.signout().then(
-    () => {
-      console.log("hello Cindy");
-      debugger
-    }, 
-    () => {
-      console.log("hello Cindy");
-      debugger
-      return dispatch(signoutCurrentUser());
-    }
-       
-  );
-};
+export const signout = () => dispatch => APIUtil.signout()
+  .then( () => (dispatch(signoutCurrentUser())),
+        err => (dispatch(receiveErrors(err.responseJSON)))
+    );   
