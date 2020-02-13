@@ -7,6 +7,17 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <script>
+      window.github = "<%= image_url('iconfinder_Github_1298743.png') %>" 
+    </script>
+    <script>
+      window.linkedin = "<%= image_url('iconfinder_linkedin_287553.png') %>" 
+    </script>
+    <% if false %>
+    <script type="text/javascript">
+      window.googleAPIKey = "<%= Rails.application.credentials.google[:api_key] %>"
+    </script>
+    <% end %>
   </head>
 
   <body>

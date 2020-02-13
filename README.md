@@ -23,4 +23,7 @@ Things you may want to cover:
 
 * ...
 
-* attributions
+Attributions:
+  Xinh Studio for Linkedin icon.
+  Just UI for Github icon.
+  Kimberly Farmer for stand-in background masthead image

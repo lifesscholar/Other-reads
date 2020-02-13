@@ -5,9 +5,9 @@
   border: 0;
   background-position: center;
   background-repeat: repeat-x;
-  background-color: #f4f2e9;
+  // background-color: #f4f2e9;
   background-size: cover;
-  // background-image: image_url("path.jpg");
+  background-image: image_url("kimberly-farmer-lUaaKCUANVI-unsplash.jpg");
 }
 
 .signedout-masthead-container {
@@ -18,18 +18,20 @@
 
 .masthead {
   height: 295px;
-  background-color: rgb(243,243,235);
+  // background-color: rgb(243,243,235);
   padding: 0 20px;
 }
 
 .signedin-masthead-container {
-  background-color: #f4f2e9;
+  // background-color: #f4f2e9;
   border-bottom: 1px solid rgb(231,230,225);
 }
 .selling-points {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px 0;
+  cursor: default;
 }
 
 .selling-points h2 {
@@ -42,4 +44,8 @@
 
 .selling-points-list {
   list-style: none;
+}
+
+.selling-points-list li {
+  padding: 2px 0;
 }

@@ -1,10 +1,46 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+  vertical-align: baseline;
+  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+}
+
+h1 {
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  display: block;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  font-size: 24px;
+}
+
 h2 {
   font-size: 16px;
-  font-weight: lighter;
-  // margin: 0;
+  // font-weight: lighter;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
 }
 
 input {
@@ -14,11 +50,17 @@ input {
   color: #333333;
 }
 
+input:focus {
+  box-shadow: 0 0 4px rgba(185,173,153,0.5);
+  border-color: #B9AD99;
+  outline: 0px;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(243,243,235);
+  // background-color: rgb(243,243,235);
   border-bottom: 1px solid rgb(231,230,225);
   padding: 0 20px;
 }
@@ -29,11 +71,17 @@ nav {
   align-items: center;
   background-color: rgb(243,243,235);
   border-top: 1px solid rgb(231,230,225);
+  height: 40px;
+  padding: 10px 10px 10px 20px;
 }
 
 .footer-author-line {
   margin: 0;
+  cursor: default;
 }
+
 a {
   padding-right: 5px;
+  width: 30px;
+  height: 30px;
 }

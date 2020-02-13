@@ -5,18 +5,21 @@
 
 .signin-box {
   padding: 5px 0;
-  display: flex;
-  flex-direction: column;
 }
 
-.signin-flex {
+.signin-form {
   display: flex;
 }
 
 .session-errors-list {
   list-style: none;
-  text-align: end;
+  text-align: start;
   margin: 5px auto;
+  padding: 0;
+}
+
+.session-errors-list li {
+  font-size: 12px;
 }
 
 .demo-user-signin {
@@ -25,7 +28,7 @@
   color: white;
   font-weight: normal;
   border-radius: 3px;
-  font-size: 14px;
+  font-size: 12px;
   cursor: pointer;
   margin: 2px;
   padding: 5px 12px;
@@ -52,15 +55,22 @@
   cursor: pointer;
   margin: 2px;
   padding: 5px 12px;
+  cursor: pointer;
+  line-height: 18px;
+  resize: none;
+}
+
+.signin-button:hover {
+  background-color: #58371F;
 }
 
 .new-account-box {
   float: right;
   width: 280px;
-  padding: 0 10px;
+  // padding: 0 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  // align-items: center;
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -75,7 +85,7 @@
   padding: 7px 5px;
   font-size: 16px;
   font-weight: lighter;
-  margin: 3px;
+  margin: 3px 0;
 }
 
 .signup-button {
@@ -87,5 +97,10 @@
   font-size: 18px;
   line-height: 22px;
   width: 85px;
+  cursor: pointer;
+}
+
+.signup-button:hover {
+  background-color: #FFD56D;
 }
 
