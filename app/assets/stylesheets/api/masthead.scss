@@ -1,0 +1,43 @@
+
+.siteheader {
+  padding: 0;
+  position: static;
+  border: 0;
+  background-position: center;
+  background-repeat: repeat-x;
+  background-color: #f4f2e9;
+  background-size: cover;
+  // background-image: image_url("path.jpg");
+}
+
+.signedout-masthead-container {
+  margin: 0 auto;
+  width: 970px;
+}
+
+.masthead {
+  height: 295px;
+  background-color: rgb(243,243,235);
+}
+
+.signedin-masthead-container {
+  background-color: #f4f2e9;
+  border-bottom: 1px solid rgb(231,230,225);
+}
+.selling-points {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.selling-points h2 {
+  margin: 10px 0 0 0;
+}
+
+.selling-points ul {
+  margin-top: 10px;
+}
+
+.selling-points-list {
+  list-style: none;
+}

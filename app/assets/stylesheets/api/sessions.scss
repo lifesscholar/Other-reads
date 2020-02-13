@@ -5,6 +5,23 @@
 
 .signin-box {
   padding: 5px 0;
+  display: flex;
+}
+
+.demo-user-signin {
+  background-color: green;
+  border: 1px solid green;
+  color: white;
+  font-weight: normal;
+  border-radius: 3px;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 2px;
+  padding: 5px 12px;
+}
+.demo-user-signin:hover {
+  background-color: darkgreen;
+  border: 1px solid darkgreen;
 }
 
 .signin-input {
@@ -60,3 +77,4 @@
   line-height: 22px;
   width: 85px;
 }
+
