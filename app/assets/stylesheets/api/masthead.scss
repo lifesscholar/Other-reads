@@ -12,12 +12,14 @@
 
 .signedout-masthead-container {
   margin: 0 auto;
-  width: 970px;
+  min-width: 970px;
+  box-sizing: border-box;
 }
 
 .masthead {
   height: 295px;
   background-color: rgb(243,243,235);
+  padding: 0 20px;
 }
 
 .signedin-masthead-container {

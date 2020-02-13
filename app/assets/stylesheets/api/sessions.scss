@@ -6,6 +6,17 @@
 .signin-box {
   padding: 5px 0;
   display: flex;
+  flex-direction: column;
+}
+
+.signin-flex {
+  display: flex;
+}
+
+.session-errors-list {
+  list-style: none;
+  text-align: end;
+  margin: 5px auto;
 }
 
 .demo-user-signin {

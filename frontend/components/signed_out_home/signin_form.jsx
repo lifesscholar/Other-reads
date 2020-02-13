@@ -47,26 +47,28 @@ class SignInForm extends React.Component {
     const demoUser = { email: "a@a.com", password: "hunter2" }
     return (
       <div className="signin-box">
-        <button className="demo-user-signin" onClick={() => this.props.signin(demoUser)}>Demo User</button>
-        <form 
-          onSubmit={this.handleSubmit} 
-          className="SignInForm"
-          >
+        <div className="signin-flex">
+          <button className="demo-user-signin" onClick={() => this.props.signin(demoUser)}>Demo User</button>
+          <form 
+            onSubmit={this.handleSubmit} 
+            className="SignInForm"
+            >
 
-          <input type="email"
-            className="signin-input"
-            value={this.state.email}
-            onChange={this.update("email")}
-            placeholder="Email Address"
-            />
-          <input type="password"
-            className="signin-input"
-            value={this.state.password}
-            onChange={this.update("password")}
-            placeholder="Password"
-            />
-          <button type="submit" className="signin-button">Sign In</button>
-        </form>
+            <input type="email"
+              className="signin-input"
+              value={this.state.email}
+              onChange={this.update("email")}
+              placeholder="Email Address"
+              />
+            <input type="password"
+              className="signin-input"
+              value={this.state.password}
+              onChange={this.update("password")}
+              placeholder="Password"
+              />
+            <button type="submit" className="signin-button">Sign In</button>
+          </form>
+        </div>
         {this.renderErrors()}
       </div>
     )
