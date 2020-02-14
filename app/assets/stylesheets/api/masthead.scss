@@ -16,16 +16,16 @@
   box-sizing: border-box;
 }
 
+.signedout-nav {
+  height: 92px;
+}
+
 .masthead {
-  height: 295px;
+  height: 325px;
   // background-color: rgb(243,243,235);
   padding: 0 20px;
 }
 
-.signedin-masthead-container {
-  // background-color: #f4f2e9;
-  border-bottom: 1px solid rgb(231,230,225);
-}
 .selling-points {
   display: flex;
   flex-direction: column;
@@ -48,4 +48,53 @@
 
 .selling-points-list li {
   padding: 2px 0;
+}
+
+.signedin-masthead-container {
+  background-color: rgb(244,241,234);
+  border-bottom: 1px solid rgb(231,230,225);
+  font-size: 16px;
+  padding: 0 0 0 20px;
+}
+
+.nav-buttons {
+  list-style: none;
+  display: flex;
+}
+
+.nav-link {
+  padding:  15px;
+  color: rgb(55,32,15);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav-buttons li  a {
+    line-height: 50px;
+}
+
+.nav-link:hover {
+  background-color: rgb(55,32,15);
+  color: #FFFFFF;
+}
+
+.signout-button {
+  border: transparent;
+  background-color: transparent;
+  padding:  15px;
+  color: rgb(55,32,15);
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.signout-button:focus {
+  box-shadow: 0 0 4px rgba(185,173,153,0.5);
+  border-color: #B9AD99;
+  outline: 0px;
+}
+
+.signout-button:hover {
+  background-color: rgb(55,32,15);
+  color: #FFFFFF;
 }

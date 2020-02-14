@@ -45,6 +45,7 @@ class SignInForm extends React.Component {
   
   render() {
     const demoUser = { email: "a@a.com", password: "hunter2" }
+    debugger
     return (
       <div className="signin-box">
         <form 
@@ -67,7 +68,6 @@ class SignInForm extends React.Component {
           <button type="submit" className="signin-button">Sign In</button>
         </form>
         <button className="demo-user-signin" onClick={() => this.props.signin(demoUser)}>Demo User</button>
-        {/* <a href="/" className="demo-user-signin" onClick={() => this.props.signin(demoUser)}>Demo User</a> */}
         {this.renderErrors()}
       </div>
     )

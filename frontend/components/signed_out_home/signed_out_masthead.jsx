@@ -7,7 +7,7 @@ const SignedOutMasthead = () => (
   <div className="siteheader">
     <div className="signedout-masthead-container">
 
-      <nav>
+      <nav className="signedout-nav">
         <h1 className="title-header">Other reads</h1>
         <SignInFormContainer />
       </nav>

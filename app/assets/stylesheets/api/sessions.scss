@@ -23,19 +23,16 @@
 }
 
 .demo-user-signin {
-  background-color: green;
-  border: 1px solid green;
+  background-color: transparent;
+  border: transparent;
   color: white;
   font-weight: normal;
-  border-radius: 3px;
-  font-size: 12px;
   cursor: pointer;
-  margin: 2px;
-  padding: 5px 12px;
+  margin-left: 3px;
+  padding: 5px 0;
 }
 .demo-user-signin:hover {
-  background-color: darkgreen;
-  border: 1px solid darkgreen;
+  text-decoration: underline;
 }
 
 .signin-input {

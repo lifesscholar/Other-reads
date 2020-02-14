@@ -6,7 +6,6 @@
 #  title           :string           not null
 #  author          :string           not null
 #  description     :text
-#  published_date  :date
 #  cover_image_url :string
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
