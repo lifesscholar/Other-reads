@@ -25,6 +25,7 @@ const App = () => (
       </div>
 
     </div> */}
+    <Route/>
     <Footer/>
   </div>
 );
