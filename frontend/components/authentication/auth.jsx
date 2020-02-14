@@ -22,7 +22,6 @@ const Auth = ({ currentUser }) => {
       <TalkingPoints/>
     </>
   )
-  debugger
   return currentUser ? SignedInMasthead() : SignedOutcontent();
 };
 

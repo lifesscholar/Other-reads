@@ -45,7 +45,6 @@ class SignInForm extends React.Component {
   
   render() {
     const demoUser = { email: "a@a.com", password: "hunter2" }
-    debugger
     return (
       <div className="signin-box">
         <form 
