@@ -3,7 +3,7 @@ import { fetchBooks } from "../../../actions/book_actions";
 import BookIndex from "./book_index";
 
 const mSTP = state => ({
-  books: state.entities.books
+  books: Object.values(state.entities.books)
 });
 
 const mDTP = dispatch => ({

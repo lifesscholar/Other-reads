@@ -14,14 +14,16 @@ class BookIndexItem extends React.Component {
   }
 
   render (){
-    const { title, picture_url } = this.props.book;
+    const { id, picture_url } = this.props.book;
     return (
       <li className="book-index-item">
-        <img 
-          src={eval(`window.${picture_url}`)} 
-          alt={picture_url}
-          className="book-index-cover"
-        />
+        <Link to={`/books/${id}`}>
+          <img 
+            src={eval(`window.${picture_url}`)} 
+            alt={picture_url}
+            className="book-index-cover"
+          />
+        </Link>
       </li>
     );
   }
