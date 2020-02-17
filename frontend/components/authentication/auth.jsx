@@ -7,19 +7,13 @@ const Auth = ({ currentUser }) => {
   const SignedInMasthead = () => (
     <div className="siteheader">
       <NavBarContainer/>
-      {/* <NavBar currentUser={currentUser} signout={signout}/> */}
-      {/* <nav className="signedin-masthead-container">
-        <h4>Hello {currentUser.first_name} {currentUser.last_name}!</h4>
-        <button className="signout-button" onClick={signout}>Sign Out</button>
-      </nav> */}
-
     </div>
   )
 
   const SignedOutcontent = () => (
     <>
       <SignedOutMasthead />
-      <TalkingPoints/>
+      {/* <TalkingPoints/> */}
     </>
   )
   return currentUser ? SignedInMasthead() : SignedOutcontent();

@@ -12,13 +12,14 @@ import {
 import AuthContainer from "./authentication/auth_container";
 import { Footer } from "./footer";
 import BookShowContainer from "./content/book_show/book_show_container";
+import TalkingPoints from "../components/signed_out_home/talking_points";
 
 const App = () => (
   <div className="content">
-    {/* <AuthContainer/> */}
+    <AuthContainer/>
     
     <Switch>
-      <Route exact path="/" component = {AuthContainer}/>
+      <Route exact path="/" component = {TalkingPoints}/>
       <Route exact path='/books/:bookId' component={BookShowContainer} />
     </Switch>
 
