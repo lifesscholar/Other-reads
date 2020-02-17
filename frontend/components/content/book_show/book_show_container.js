@@ -3,7 +3,6 @@ import { fetchBook } from "../../../actions/book_actions";
 import BookShow from "./book_show";
 
 const mSTP = (state, ownProps) => {
-  debugger
   return {
     book: state.entities.books[ownProps.match.params.bookId]
   };

@@ -1,3 +1,28 @@
 // Place all the styles related to the api/books controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.book-content {
+  display: flex;
+  font-family: "Merriweather", "Georgia", serif;
+  padding: 10px;
+}
+
+.book-info {
+  padding: 0 20px;
+}
+
+.book-content h2 {
+  font-size: 24px;
+  line-height: 1.25;
+  margin-block-start: 0;
+  font-family: "Merriweather", "Georgia", serif;
+}
+
+.book-cover {
+  max-width: 150px;
+}
+
+.book-author {
+  margin-bottom: 8px;
+}
