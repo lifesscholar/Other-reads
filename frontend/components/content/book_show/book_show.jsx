@@ -1,13 +1,21 @@
 import React from "react";
 
-const BookShow = ({ book, bookId, fetchBook}) => {
-  const books = {
-    [bookId]: book
-  };
+class BookShow extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-  return (
-    null
-  );
-};
+  componentDidMount() {
+    debugger
+    this.props.fetchBook(this.props.match.params.bookId);
+  }
 
+  render () {
+
+    return(
+      null
+    );
+  }
+
+}
 export default BookShow;

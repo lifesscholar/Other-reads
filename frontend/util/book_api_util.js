@@ -1,12 +1,12 @@
 export const fetchBooks = data => {
   return $.ajax({
-    url: "/api/book",
+    url: "/api/books",
     data
   });
 };
 
 export const fetchBook = id => {
   return $.ajax({
-    url: `/api/book/${id}`
+    url: `/api/books/${id}`
   });
 };

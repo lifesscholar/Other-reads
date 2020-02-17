@@ -8,23 +8,20 @@ import {
   HashRouter
 } from 'react-router-dom';
 
-// import SignInFormContainer from "./signed_out_home/signin_form_container";
-// import SignUpFormContainer from "./signed_out_home/signup_form_container";
+
 import AuthContainer from "./authentication/auth_container";
 import { Footer } from "./footer";
+import BookShowContainer from "./content/book_show/book_show_container";
+
 const App = () => (
   <div className="content">
-    <AuthContainer/>
-    {/* <div className="signedout-masthead-container">
-      <nav>
-        <h1>Otherreads</h1>
-        <SignInFormContainer/>
-      </nav>
-      <div className="masthead">
-        <SignUpFormContainer/>
-      </div>
+    {/* <AuthContainer/> */}
+    
+    <Switch>
+      <Route exact path="/" component = {AuthContainer}/>
+      <Route exact path='/books/:bookId' component={BookShowContainer} />
+    </Switch>
 
-    </div> */}
     <Route/>
     <Footer/>
   </div>

@@ -9,7 +9,7 @@ const mSTP = (state, ownProps) => {
 };
 
 const mDTP = dispatch => ({
-  fetchBook: bookId = dispatch(fetchBook(bookId))
+  fetchBook: id => dispatch(fetchBook(id))
 });
 
 export default connect(mSTP, mDTP)(BookShow);
