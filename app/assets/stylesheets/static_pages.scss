@@ -66,13 +66,20 @@ nav {
 }
 
 .footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: rgb(243,243,235);
   border-top: 1px solid rgb(231,230,225);
   height: 40px;
-  padding: 10px 10px 10px 20px;
+  padding: 10px 20px 10px 20px;
+}
+
+.footer div {
+  padding-right: 30px;
 }
 
 .footer-author-line {
@@ -84,4 +91,8 @@ a {
   padding-right: 5px;
   width: 30px;
   height: 30px;
+}
+
+button {
+  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
 }
