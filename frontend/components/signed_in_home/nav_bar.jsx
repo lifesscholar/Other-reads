@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const NavBar = ({ currentUser, signout }) => {
   return (
     <nav className="signedin-masthead-container">
-      <div>
+      <div className="left-nav">
         <h4>Other Reads</h4>
         <ul className="nav-buttons">
           <li>

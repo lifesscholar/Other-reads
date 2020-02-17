@@ -1,7 +1,7 @@
-export const fetchBooks = data => {
+export const fetchBooks = () => {
   return $.ajax({
     url: "/api/books",
-    data
+    // data
   });
 };
 
