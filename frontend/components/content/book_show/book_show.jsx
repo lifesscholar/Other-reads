@@ -6,7 +6,7 @@ class BookShow extends React.Component {
   }
 
   componentDidMount() {
-    debugger
+    // debugger
     this.props.fetchBook(this.props.match.params.bookId);
   }
 
