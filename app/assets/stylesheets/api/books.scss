@@ -6,10 +6,22 @@
   display: flex;
   font-family: "Merriweather", "Georgia", serif;
   padding: 10px;
+  background-color: #f3f3eb;
+}
+
+.book-sidebar {
+  display: flex;
+  flex-direction: column;
+}
+
+.back-to-book-index {
+  padding-top: 10px;
+  width: 100%;
 }
 
 .book-info {
   padding: 0 20px;
+  max-width: 400px;
 }
 
 .book-content h2 {
@@ -26,3 +38,22 @@
 .book-author {
   margin-bottom: 8px;
 }
+
+.book-index {
+  background-color: #f3f3eb;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding-top: 20px;
+  flex-wrap: wrap;
+}
+
+.book-index-item{
+  padding: 0 20px 20px 0
+}
+
+.book-index-cover {
+  width: 250px;
+  height: 375px;
+}
+

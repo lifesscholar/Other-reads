@@ -13113,3 +13113,149 @@ Processing by Api::BooksController#index as JSON
 Completed 200 OK in 201ms (Views: 31.5ms | ActiveRecord: 164.4ms)
 
 
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Destroy (50.9ms)[0m  [1m[31mDELETE FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Load (1.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (41.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mBook Destroy (42.2ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mBook Destroy (0.5ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:10
+  [1m[36mBook Destroy (0.4ms)[0m  [1m[31mDELETE FROM "books" WHERE "books"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:10
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "n_granite@hotmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fojbxerEXfq1Od0svZdSmg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (10.1ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Neev"], ["last_name", "Granite"], ["email", "n_granite@hotmail.com"], ["password_digest", "$2a$12$fyKZ4VxKpyx1HOVgq988/eaQ.obMu5I3oDFYGMnOQwGhDACLAdzty"], ["session_token", "fojbxerEXfq1Od0svZdSmg"], ["created_at", "2020-02-18 14:54:32.117653"], ["updated_at", "2020-02-18 14:54:32.117653"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "a@a.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "YBMiCQD7EiyNaxFTwupl5w"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Dale"], ["last_name", "Christian"], ["email", "a@a.com"], ["password_digest", "$2a$12$t5REWje.TAKh.Rt.injgjeb6kc8slW2FFbLG0yzN8907PH.xASTBe"], ["session_token", "YBMiCQD7EiyNaxFTwupl5w"], ["created_at", "2020-02-18 14:54:32.412487"], ["updated_at", "2020-02-18 14:54:32.412487"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "JWang9392@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "f58N2JWNQ7aULsqZKq8u3Q"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Jason"], ["last_name", "Wang"], ["email", "JWang9392@gmail.com"], ["password_digest", "$2a$12$ZeqAt4yqIYvUZFGK.OmMWOWyWqN5y4WfYp30QrnC.Mc26Cwz4YHb2"], ["session_token", "f58N2JWNQ7aULsqZKq8u3Q"], ["created_at", "2020-02-18 14:54:32.704141"], ["updated_at", "2020-02-18 14:54:32.704141"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "cindytong@aol.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Tv1DhMwQtvCWJd0R_7MtEg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Cindy"], ["last_name", "Tong"], ["email", "cindytong@aol.com"], ["password_digest", "$2a$12$A.6H10HlFN19p48i07QVdOgh2sWsmRtpDiV0NcDhFCnUYhFO0uIsq"], ["session_token", "Tv1DhMwQtvCWJd0R_7MtEg"], ["created_at", "2020-02-18 14:54:32.988958"], ["updated_at", "2020-02-18 14:54:32.988958"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mBook Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."title" = $1 AND "books"."author" = $2 LIMIT $3[0m  [["title", "The Fellowship of the Ring"], ["author", "J.R.R. Tolkien"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:38
+  [1m[36mBook Create (2.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Fellowship of the Ring"], ["author", "J.R.R. Tolkien"], ["description", "One Ring to rule them all, One Ring to find them, One Ring to bring them all and in the darkeness bind them.\n        In ancient times the Rings of Power were crafted by the Elven-smiths, and Sauron, The Dark Lord, forged the One Ring, filling it with his own power so that he could rule all others. But the One Ring was taken from him, and though he sought it throughout Middle-earth, it remained lost to him. After many ages it fell into the hands of Bilbo Baggins, as told in The Hobbit.\n        In a sleepy village in the Shire, young Frodo Baggins finds himself faced with an immense task, as his elderly cousin Bilbo entrusts the Ring to his care. Frodo must leave his home and make a perilous journey across Middle-earth to the Cracks of Doom, there to destroy the Ring and foil the Dark Lord in his evil purpose."], ["cover_image_url", "FellowshipOfTheRing"], ["created_at", "2020-02-18 14:54:32.995930"], ["updated_at", "2020-02-18 14:54:32.995930"]]
+  ↳ db/seeds.rb:38
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mBook Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."title" = $1 AND "books"."author" = $2 LIMIT $3[0m  [["title", "The Two Towers"], ["author", "J.R.R. Tolkien"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:38
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Two Towers"], ["author", "J.R.R. Tolkien"], ["description", "The Companions of the Ring have become involved in separate adventures as the quest continues. Aragorn, revealed as the hidden heir of the ancient Kings of the West, joined with the Riders of Rohan against the forces of Isengard, and took part in the desperate victory of the Hornburg. Merry and Pippin, captured by Orcs, escaped into Fangorn Forest and there encountered the Ents. Gandalf returned, miraculously, and defeated the evil wizard, Saruman. Meanwhile, Sam and Frodo progressed towards Mordor to destroy the Ring, accompanied by SmEagol--Gollum, still obsessed by his 'precious'. After a battle with the giant spider, Shelob, Sam left his master for dead; but Frodo is still alive--in the hands of the Orcs. And all the time the armies of the Dark Lord are massing. J.R.R. Tolkien's great work of imaginative fiction has been labeled both a heroic romance and a classic fantasy fiction. By turns comic and homely, epic and diabolic, the narrative moves through countless changes of scene and character in an imaginary world which is totally convincing in its detail."], ["cover_image_url", "TwoTowers"], ["created_at", "2020-02-18 14:54:33.003374"], ["updated_at", "2020-02-18 14:54:33.003374"]]
+  ↳ db/seeds.rb:38
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mBook Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."title" = $1 AND "books"."author" = $2 LIMIT $3[0m  [["title", "The Return of the King"], ["author", "J.R.R. Tolkien"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:38
+  [1m[36mBook Create (1.0ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Return of the King"], ["author", "J.R.R. Tolkien"], ["description", "The Fellowship was scattered. \n        Some were bracing hopelessly for war against the ancient evil of Sauron. Some were contending with the treachery of the wizard Saruman. Only Frodo and Sam were left to take the accursed Ring of Power to be destroyed in Mordor–the dark Kingdom where Sauron was supreme. Their guide was Gollum, deceitful and lust-filled, slave to the corruption of the Ring. \n        Thus continues the magnificent, bestselling tale of adventure begun in The Fellowship of the Ring, which reaches its soul-stirring climax in The Return of the King."], ["cover_image_url", "ReturnOfTheKing"], ["created_at", "2020-02-18 14:54:33.009309"], ["updated_at", "2020-02-18 14:54:33.009309"]]
+  ↳ db/seeds.rb:38
+  [1m[35m (39.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mBook Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."title" = $1 AND "books"."author" = $2 LIMIT $3[0m  [["title", "Dune"], ["author", "Frank Herbert"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:38
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Dune"], ["author", "Frank Herbert"], ["description", "Set on the desert planet Arrakis, Dune is the story of the boy Paul Atreides, heir to a noble family tasked with ruling an inhospitable world where the only thing of value is the \"spice\" melange, a drug capable of extending life and enhancing consciousness. Coveted across the known universe, melange is a prize worth killing for...\n        When House Atreides is betrayed, the destruction of Paul's family will set the boy on a journey toward a destiny greater than he could ever have imagined. And as he evolves into the mysterious man known as Muad'Dib, he will bring to fruition humankind's most ancient and unattainable dream.\n        A stunning blend of adventure and mysticism, environmentalism and politics, Dune won the first Nebula Award, shared the Hugo Award, and formed the basis of what is undoubtedly the grandest epic in science fiction."], ["cover_image_url", "Dune"], ["created_at", "2020-02-18 14:54:33.054926"], ["updated_at", "2020-02-18 14:54:33.054926"]]
+  ↳ db/seeds.rb:38
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mBook Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."title" = $1 AND "books"."author" = $2 LIMIT $3[0m  [["title", "Do Robots Dream of Electric Sheep?"], ["author", "Philip K. Dick"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:38
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Do Robots Dream of Electric Sheep?"], ["author", "Philip K. Dick"], ["description", "It was January 2021, and Rick Deckard had a license to kill.\n        Somewhere among the hordes of humans out there, lurked several rogue androids. Deckard's assignment--find them and then...\"retire\" them. Trouble was, the androids all looked exactly like humans, and they didn't want to be found!"], ["cover_image_url", "DoRobotsDreamOfElectricSheep"], ["created_at", "2020-02-18 14:54:33.061100"], ["updated_at", "2020-02-18 14:54:33.061100"]]
+  ↳ db/seeds.rb:38
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mBook Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."title" = $1 AND "books"."author" = $2 LIMIT $3[0m  [["title", "The Hitchhiker's Guide to the Galaxy"], ["author", "Douglas Adams"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:38
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Hitchhiker's Guide to the Galaxy"], ["author", "Douglas Adams"], ["description", "Seconds before the Earth is demolished to make way for a galactic freeway, Arthur Dent is plucked off the planet by his friend Ford Prefect, a researcher for the revised edition of The Hitchhiker's Guide to the Galaxy who, for the last fifteen years, has been posing as an out-of-work actor.\n    Together this dynamic pair begin a journey through space aided by quotes from The Hitchhiker's Guide (\"A towel is about the most massively useful thing an interstellar hitchhiker can have\") and a galaxy-full of fellow travelers: Zaphod Beeblebrox—the two-headed, three-armed ex-hippie and totally out-to-lunch president of the galaxy; Trillian, Zaphod's girlfriend (formally Tricia McMillan), whom Arthur tried to pick up at a cocktail party once upon a time zone; Marvin, a paranoid, brilliant, and chronically depressed robot; Veet Voojagig, a former graduate student who is obsessed with the disappearance of all the ballpoint pens he bought over the years."], ["cover_image_url", "HitchhikersGuide"], ["created_at", "2020-02-18 14:54:33.065119"], ["updated_at", "2020-02-18 14:54:33.065119"]]
+  ↳ db/seeds.rb:38
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mBook Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."title" = $1 AND "books"."author" = $2 LIMIT $3[0m  [["title", "Dracula"], ["author", "Bram Stoker"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:38
+  [1m[36mBook Create (2.0ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Dracula"], ["author", "Bram Stoker"], ["description", "This novel tells the story of Dracula's attempt to move from Transylvania to England so that he may find new blood and spread the undead curse, and of the battle between Dracula and a small group of men and a woman led by Professor Abraham Van Helsing."], ["cover_image_url", "Dracula"], ["created_at", "2020-02-18 14:54:33.069760"], ["updated_at", "2020-02-18 14:54:33.069760"]]
+  ↳ db/seeds.rb:38
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mBook Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."title" = $1 AND "books"."author" = $2 LIMIT $3[0m  [["title", "Necroscope"], ["author", "Brian Lumley"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:38
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Necroscope"], ["author", "Brian Lumley"], ["description", "Except to Harry Keogh, Necroscope. And what they tell him is horrifying.\n        In the Balkan mountains of Rumania, a terrible evil is growing. Long buried in hallowed ground, bound by earth and silver, the master vampire schemes and plots. Trapped in unlife, neither dead nor living, Thibor Ferenczy hungers for freedom and revenge.\n        The vampire's human tool is Boris Dragosani, part of a super-secret Soviet spy agency. Dragosani is an avid pupil, eager to plumb the depthless evil of the vampire's mind. Ferenczy teaches Dragosani the awful skills of the necromancer, gives him the ability to rip secrets from the mind and bodies of the dead.\n        Dragosani works not for Ferenczy's freedom but world domination. He will rule the world with knowledge raped from the dead.\n        His only opponent: Harry Koegh, champion of the dead and the living.\n        To protect Harry, the dead will do anything--even rise from their graves!"], ["cover_image_url", "Necroscope"], ["created_at", "2020-02-18 14:54:33.083204"], ["updated_at", "2020-02-18 14:54:33.083204"]]
+  ↳ db/seeds.rb:38
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mBook Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."title" = $1 AND "books"."author" = $2 LIMIT $3[0m  [["title", "The Exorcist"], ["author", "William Peter Blatty"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:38
+  [1m[36mBook Create (0.5ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Exorcist"], ["author", "William Peter Blatty"], ["description", "Inspired by a true story of a child’s demonic possession in the 1940s, William Peter Blatty created an iconic novel that focuses on Regan, the eleven-year-old daughter of a movie actress residing in Washington, D.C. A small group of overwhelmed yet determined individuals must rescue Regan from her unspeakable fate, and the drama that ensues is gripping and unfailingly terrifying.\n        Purposefully raw and profane, The Exorcist still has the extraordinary ability to disturb readers and cause them to forget that it is “just a story.” Published here in this beautiful fortieth anniversary edition, it remains an unforgettable reading experience and will continue to shock and frighten a new generation of readers."], ["cover_image_url", "Exorcist"], ["created_at", "2020-02-18 14:54:33.086929"], ["updated_at", "2020-02-18 14:54:33.086929"]]
+  ↳ db/seeds.rb:38
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mBook Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."title" = $1 AND "books"."author" = $2 LIMIT $3[0m  [["title", "Gardens of the Moon"], ["author", "Steven Erikson"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:38
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Gardens of the Moon"], ["author", "Steven Erikson"], ["description", "The Malazan Empire simmers with discontent, bled dry by interminable warfare, bitter infighting and bloody confrontations with the formidable Anomander Rake and his Tiste Andii, ancient and implacable sorcerers. Even the imperial legions, long inured to the bloodshed, yearn for some respite. Yet Empress Laseen's rule remains absolute, enforced by her dread Claw assassins.\n        For Sergeant Whiskeyjack and his squad of Bridgeburners, and for Tattersail, surviving cadre mage of the Second Legion, the aftermath of the siege of Pale should have been a time to mourn the many dead. But Darujhistan, last of the Free Cities of Genabackis, yet holds out. It is to this ancient citadel that Laseen turns her predatory gaze.\n        However, it would appear that the Empire is not alone in this great game. Sinister, shadowbound forces are gathering as the gods themselves prepare to play their hand...\n        Conceived and written on a panoramic scale, Gardens of the Moon is epic fantasy of the highest order--an enthralling adventure by an outstanding new voice."], ["cover_image_url", "GardensOfTheMoon"], ["created_at", "2020-02-18 14:54:33.090497"], ["updated_at", "2020-02-18 14:54:33.090497"]]
+  ↳ db/seeds.rb:38
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38

@@ -17,16 +17,18 @@ import BookIndexContainer from "./content/book_index/book_index_container";
 
 const App = () => (
   <div className="content">
-    <AuthContainer/>
-    
-    <Switch>
-      {/* <Route exact path="/" component = {TalkingPoints}/> */}
-      <Route exact path="/" component={BookIndexContainer}/>
-      <Route exact path='/books/:bookId' component={BookShowContainer} />
-    </Switch>
+    <div className="content-wrap">
+      <AuthContainer/>
+      
+      <Switch>
+        {/* <Route exact path="/" component = {TalkingPoints}/> */}
+        <Route exact path="/" component={BookIndexContainer}/>
+        <Route exact path='/books/:bookId' component={BookShowContainer} />
+      </Switch>
 
-    <Route/>
-    <Footer/>
+      <Route/>
+      <Footer/>
+    </div>
   </div>
 );
 

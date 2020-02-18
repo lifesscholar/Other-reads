@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class BookShow extends React.Component {
   constructor(props) {
@@ -17,8 +18,9 @@ class BookShow extends React.Component {
     const picture_url = book.picture_url;
     return(
       <div className="book-content">
-        <div>
+        <div className="book-sidebar">
           <img src={eval(`window.${picture_url}`)} alt={book.picure_url} className="book-cover"/>
+          <Link to="/" className="back-to-book-index">Back to Book Index</Link>
         </div>
         <div className="book-info">
           <h2 className="book-title">{book.title}</h2>
