@@ -12,7 +12,7 @@
 
 class Shelf < ApplicationRecord
   validates :shelf_name, :user_id, presence: true
-  validates :shelf_name, :user_id, uniqueness: true
+  validates :shelf_name, uniqueness: { scope: :user_id }
 
   belongs_to :user, 
     class_name: :User, 
