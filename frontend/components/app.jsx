@@ -28,7 +28,6 @@ const App = () => (
       </Switch>
 
       <Switch>
-        {/* <Route exact path="/" component = {TalkingPoints}/> */}
         <Route exact path="/" component={BookIndexContainer}/>
         <Route exact path="/books" component={BookIndexContainer}/>
         <Route exact path='/books/:bookId' component={BookShowContainer} />
