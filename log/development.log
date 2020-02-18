@@ -13085,3 +13085,31 @@ Processing by Api::SessionsController#create as JSON
 Completed 200 OK in 454ms (Views: 10.2ms | ActiveRecord: 109.1ms)
 
 
+Started GET "/" for ::1 at 2020-02-18 09:02:16 -0500
+  [1m[35m (6.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/appacademystudent/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (14.4ms)
+Started GET "/" for ::1 at 2020-02-18 09:02:19 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 3570ms (Views: 3567.2ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 5273ms (Views: 5269.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/books" for ::1 at 2020-02-18 09:02:23 -0500
+Processing by Api::BooksController#index as JSON
+  Rendering api/books/index.json.jbuilder
+  [1m[36mBook Load (147.3ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ app/views/api/books/index.json.jbuilder:1
+  Rendered api/books/_book.json.jbuilder (0.5ms)
+  Rendered api/books/_book.json.jbuilder (0.1ms)
+  Rendered api/books/_book.json.jbuilder (0.2ms)
+  Rendered api/books/index.json.jbuilder (182.3ms)
+Completed 200 OK in 201ms (Views: 31.5ms | ActiveRecord: 164.4ms)
+
+
