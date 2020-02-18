@@ -32,7 +32,6 @@
   align-items: center;
   padding-top: 20px;
   cursor: default;
-  background-color: #F4F2E9;
   color: #484744;
 }
 
@@ -58,6 +57,20 @@
   border-bottom: 1px solid rgb(231,230,225);
   font-size: 16px;
   padding: 0 0 0 20px;
+}
+
+.signin-nav-link {
+  width: auto;
+  height: auto;
+  padding: 16px;
+  cursor: pointer;
+  color: #37200f;
+  text-decoration: none;
+}
+
+.signin-nav-link:hover {
+  background-color: #37200f;
+  color: #FFFFFF;
 }
 
 .left-nav {

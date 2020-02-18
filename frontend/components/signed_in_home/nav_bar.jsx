@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const NavBar = ({ currentUser, signout }) => {
+const NavBar = ({ signout }) => {
   return (
     <nav className="signedin-masthead-container">
       <div className="left-nav">

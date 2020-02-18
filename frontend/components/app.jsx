@@ -14,11 +14,15 @@ import { Footer } from "./footer";
 import BookShowContainer from "./content/book_show/book_show_container";
 import TalkingPoints from "../components/signed_out_home/talking_points";
 import BookIndexContainer from "./content/book_index/book_index_container";
+import NavBarContainer from "./navbar_switch/nav_bar_switch_container";
 
 const App = () => (
   <div className="content">
     <div className="content-wrap">
-      <AuthContainer/>
+      <Switch>
+        <Route exact path="/" component={AuthContainer}/>
+        <NavBarContainer/>
+      </Switch>
       <Switch>
         <Route exact path="/" component={TalkingPoints}/>
       </Switch>

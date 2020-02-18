@@ -1,6 +1,5 @@
 import { connect } from "react-redux";
 import Auth from "./auth";
-import { signout } from "../../actions/session_actions";
 
 
 const mapStateToProps = ({ session, entities: { users } }) => {
