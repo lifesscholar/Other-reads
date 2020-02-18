@@ -1,6 +1,5 @@
 import React from "react";
 import BookIndexItem from "./book_index_item";
-import TalkingPoints from "../../signed_out_home/talking_points";
 
 class BookIndex extends React.Component {
   constructor(props) {
@@ -20,7 +19,6 @@ class BookIndex extends React.Component {
     
     return (
       <div>
-        <TalkingPoints/>
         <ul className="book-index">
           {books.map (book =>(
             <BookIndexItem
