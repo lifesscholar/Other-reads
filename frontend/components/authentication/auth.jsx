@@ -13,7 +13,6 @@ const Auth = ({ currentUser }) => {
   const SignedOutcontent = () => (
     <>
       <SignedOutMasthead />
-      {/* <TalkingPoints/> */}
     </>
   )
   return currentUser ? SignedInMasthead() : SignedOutcontent();

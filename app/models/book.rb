@@ -17,4 +17,11 @@ class Book < ApplicationRecord
                                  scope: :author, 
                                 #  message: "Authors cannot have more than one book of the same title"
                                 }
+  has_many :shelved_books,
+    class_name: :ShelvedBook, 
+    foreign_key: :book_id
+
+  has_many :shelves, 
+    through: :shelved_books, 
+    source: :shelf
 end

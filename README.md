@@ -26,4 +26,6 @@ Things you may want to cover:
 Attributions:
   Xinh Studio for Linkedin icon.
   Just UI for Github icon.
-  Kimberly Farmer for stand-in background masthead image
+  Kimberly Farmer for stand-in background masthead image.
+  Goodreads.com for book covers and descriptions.
+  Daniela Freedman for logo and home background.
