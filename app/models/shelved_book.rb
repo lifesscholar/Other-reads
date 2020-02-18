@@ -18,6 +18,6 @@ class ShelvedBook < ApplicationRecord
     foreign_key: :book_id
 
   belongs_to :shelf,
-    class_name: :Shelf
+    class_name: :Shelf,
     foreign_key: :shelf_id
 end
