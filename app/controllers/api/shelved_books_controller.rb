@@ -16,6 +16,7 @@ class Api::ShelvedBooksController < ApplicationController
       render :show
     else
       render json: ["book does not exist on this shelf"], status: 422
+    end
   end
 
   private
