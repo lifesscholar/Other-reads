@@ -5,7 +5,10 @@ class Api::ShelvesController < ApplicationController
     
     @shelves = Shelf.where(user_id: current_user.id)
     if @shelves.first === nil
-      Shelf.default_shelves(current_user)
+      Shelf.create(shelf_name: "Read", exclusive: true, user_id: current_user.id)
+      Shelf.create(shelf_name: "Reading", exclusive: true, user_id: current_user.id)
+      Shelf.create(shelf_name: "Will Read", exclusive: true, user_id: current_user.id)
+
       @shelves = Shelf.where(user_id: current_user.id)
     end
     render :index
@@ -23,12 +26,12 @@ class Api::ShelvesController < ApplicationController
   end
 
   def show
-    @user = Shelf.find(params[:id])
+    @shelf = Shelf.find(params[:id])
     render :show
   end
 
   def update
-    @user = Shelf.find(params[:id])
+    @shelf = Shelf.find(params[:id])
 
     if @shelf.update(shelf_params)
       render :show
