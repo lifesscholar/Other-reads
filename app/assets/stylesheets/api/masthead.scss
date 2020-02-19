@@ -7,7 +7,7 @@
   background-repeat: repeat-x;
   // background-color: #f4f2e9;
   background-size: cover;
-  background-image: image_url("kimberly-farmer-lUaaKCUANVI-unsplash.jpg");
+  background-image: image_url("back-pic.jpg");
 }
 
 .signedout-masthead-container {
@@ -54,7 +54,6 @@
 
 .signedin-masthead-container {
   background-color: rgb(244,241,234);
-  border-bottom: 1px solid rgb(231,230,225);
   font-size: 16px;
   padding: 0 0 0 20px;
 }
@@ -122,4 +121,24 @@
 .signout-button:hover {
   background-color: rgb(55,32,15);
   color: #FFFFFF;
+}
+
+.logo-link {
+  width: auto;
+  height: auto;
+  padding: 0;
+}
+
+.logo {
+  height: 90px;
+}
+
+.nav-logo {
+  height: 50px;
+
+}
+
+.nav-logo-link {
+  width: auto;
+  padding: 0;
 }

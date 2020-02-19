@@ -26,10 +26,4 @@ class Shelf < ApplicationRecord
   through: :shelved_books, 
   source: :book
 
-  def self.default_shelves(user)
-    Shelf.create(shelf_name: "Read", exclusive: true, user_id: user.id)
-    Shelf.create(shelf_name: "Reading", exclusive: true, user_id: user.id)
-    Shelf.create(shelf_name: "Will Read", exclusive: true, user_id: user.id)
-  end
-
 end

@@ -4,13 +4,6 @@ class Api::ShelvesController < ApplicationController
   def index
     
     @shelves = Shelf.where(user_id: current_user.id)
-    if @shelves.first === nil
-      Shelf.create(shelf_name: "Read", exclusive: true, user_id: current_user.id)
-      Shelf.create(shelf_name: "Reading", exclusive: true, user_id: current_user.id)
-      Shelf.create(shelf_name: "Will Read", exclusive: true, user_id: current_user.id)
-
-      @shelves = Shelf.where(user_id: current_user.id)
-    end
     render :index
   end
 

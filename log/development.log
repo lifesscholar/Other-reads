@@ -13506,3 +13506,331 @@ Migrating to AddIndexForShelfScopedUser (20200218230440)
   [1m[36mShelf Load (0.7ms)[0m  [1m[34mSELECT "shelves".* FROM "shelves"[0m
   [1m[36mShelf Load (1.6ms)[0m  [1m[34mSELECT "shelves".* FROM "shelves"[0m
   [1m[36mShelf Load (1.5ms)[0m  [1m[34mSELECT "shelves".* FROM "shelves"[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE DATABASE "greatreads_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE DATABASE "greatreads_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35mSQL (44.7ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (10.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "books" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE "books" ("id" bigserial primary key, "title" character varying NOT NULL, "author" character varying NOT NULL, "description" text, "cover_image_url" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE  INDEX  "index_books_on_author" ON "books"  ("author")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_books_on_title_and_author" ON "books"  ("title", "author")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX  "index_books_on_title" ON "books"  ("title")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (4.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "shelved_books" CASCADE[0m
+  ↳ db/schema.rb:30
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE "shelved_books" ("id" bigserial primary key, "shelf_id" character varying NOT NULL, "book_id" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:30
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE  INDEX  "index_shelved_books_on_book_id" ON "shelved_books"  ("book_id")[0m
+  ↳ db/schema.rb:30
+  [1m[35m (89.6ms)[0m  [1m[35mCREATE  INDEX  "index_shelved_books_on_shelf_id" ON "shelved_books"  ("shelf_id")[0m
+  ↳ db/schema.rb:30
+  [1m[35m (5.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "shelves" CASCADE[0m
+  ↳ db/schema.rb:39
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "shelves" ("id" bigserial primary key, "shelf_name" character varying NOT NULL, "user_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "exclusive" boolean DEFAULT FALSE NOT NULL)[0m
+  ↳ db/schema.rb:39
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_shelves_on_user_id_and_shelf_name" ON "shelves"  ("user_id", "shelf_name")[0m
+  ↳ db/schema.rb:39
+  [1m[35m (4.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:48
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "first_name" character varying NOT NULL, "last_name" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:48
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/schema.rb:48
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/schema.rb:48
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (2.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (19.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "books" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (23.5ms)[0m  [1m[35mCREATE TABLE "books" ("id" bigserial primary key, "title" character varying NOT NULL, "author" character varying NOT NULL, "description" text, "cover_image_url" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE  INDEX  "index_books_on_author" ON "books"  ("author")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_books_on_title_and_author" ON "books"  ("title", "author")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE  INDEX  "index_books_on_title" ON "books"  ("title")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "shelved_books" CASCADE[0m
+  ↳ db/schema.rb:30
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE TABLE "shelved_books" ("id" bigserial primary key, "shelf_id" character varying NOT NULL, "book_id" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:30
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE  INDEX  "index_shelved_books_on_book_id" ON "shelved_books"  ("book_id")[0m
+  ↳ db/schema.rb:30
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE  INDEX  "index_shelved_books_on_shelf_id" ON "shelved_books"  ("shelf_id")[0m
+  ↳ db/schema.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "shelves" CASCADE[0m
+  ↳ db/schema.rb:39
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "shelves" ("id" bigserial primary key, "shelf_name" character varying NOT NULL, "user_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "exclusive" boolean DEFAULT FALSE NOT NULL)[0m
+  ↳ db/schema.rb:39
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_shelves_on_user_id_and_shelf_name" ON "shelves"  ("user_id", "shelf_name")[0m
+  ↳ db/schema.rb:39
+  [1m[35m (4.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:48
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "first_name" character varying NOT NULL, "last_name" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:48
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/schema.rb:48
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/schema.rb:48
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200218230440)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200214215008),
+(20200218230325),
+(20200218185446),
+(20200218160414),
+(20200218230031),
+(20200218164044);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Update (0.6ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "development"], ["updated_at", "2020-02-19 16:14:45.251709"], ["key", "environment"]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-02-19 16:14:45.256582"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Destroy (1.2ms)[0m  [1m[31mDELETE FROM "users"[0m
+  ↳ db/seeds.rb:9
+  [1m[36mBook Load (1.1ms)[0m  [1m[34mSELECT "books".* FROM "books"[0m
+  ↳ db/seeds.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "n_granite@hotmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "kN4-qOIN80waLDGasSQ7cQ"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Neev"], ["last_name", "Granite"], ["email", "n_granite@hotmail.com"], ["password_digest", "$2a$12$F/ntD3rtM..mi3oGc88BVekZHboEohxzDPg1Osq4mHJ92noNJmLne"], ["session_token", "kN4-qOIN80waLDGasSQ7cQ"], ["created_at", "2020-02-19 16:14:45.629233"], ["updated_at", "2020-02-19 16:14:45.629233"]]
+  ↳ db/seeds.rb:12
+  [1m[36mShelf Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "shelves" WHERE "shelves"."shelf_name" = $1 AND "shelves"."user_id" = $2 LIMIT $3[0m  [["shelf_name", "Read"], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:55
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:55
+  [1m[36mShelf Create (0.9ms)[0m  [1m[32mINSERT INTO "shelves" ("shelf_name", "user_id", "created_at", "updated_at", "exclusive") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["shelf_name", "Read"], ["user_id", 1], ["created_at", "2020-02-19 16:14:45.680866"], ["updated_at", "2020-02-19 16:14:45.680866"], ["exclusive", true]]
+  ↳ app/models/user.rb:55
+  [1m[36mShelf Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "shelves" WHERE "shelves"."shelf_name" = $1 AND "shelves"."user_id" = $2 LIMIT $3[0m  [["shelf_name", "Reading"], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:56
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:56
+  [1m[36mShelf Create (0.5ms)[0m  [1m[32mINSERT INTO "shelves" ("shelf_name", "user_id", "created_at", "updated_at", "exclusive") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["shelf_name", "Reading"], ["user_id", 1], ["created_at", "2020-02-19 16:14:45.687209"], ["updated_at", "2020-02-19 16:14:45.687209"], ["exclusive", true]]
+  ↳ app/models/user.rb:56
+  [1m[36mShelf Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "shelves" WHERE "shelves"."shelf_name" = $1 AND "shelves"."user_id" = $2 LIMIT $3[0m  [["shelf_name", "Will Read"], ["user_id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:57
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:57
+  [1m[36mShelf Create (0.5ms)[0m  [1m[32mINSERT INTO "shelves" ("shelf_name", "user_id", "created_at", "updated_at", "exclusive") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["shelf_name", "Will Read"], ["user_id", 1], ["created_at", "2020-02-19 16:14:45.693217"], ["updated_at", "2020-02-19 16:14:45.693217"], ["exclusive", true]]
+  ↳ app/models/user.rb:57
+  [1m[35m (39.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (11.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "a@a.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RU619K9wnUAH8WEzgMHbUg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Dale"], ["last_name", "Christian"], ["email", "a@a.com"], ["password_digest", "$2a$12$.4EImRze1VJ3IFhUJyN6xOaWgCk1WBIhEGhuB/xgSMfnwLCWTy19W"], ["session_token", "RU619K9wnUAH8WEzgMHbUg"], ["created_at", "2020-02-19 16:14:46.049068"], ["updated_at", "2020-02-19 16:14:46.049068"]]
+  ↳ db/seeds.rb:12
+  [1m[36mShelf Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "shelves" WHERE "shelves"."shelf_name" = $1 AND "shelves"."user_id" = $2 LIMIT $3[0m  [["shelf_name", "Read"], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:55
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:55
+  [1m[36mShelf Create (0.5ms)[0m  [1m[32mINSERT INTO "shelves" ("shelf_name", "user_id", "created_at", "updated_at", "exclusive") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["shelf_name", "Read"], ["user_id", 2], ["created_at", "2020-02-19 16:14:46.057943"], ["updated_at", "2020-02-19 16:14:46.057943"], ["exclusive", true]]
+  ↳ app/models/user.rb:55
+  [1m[36mShelf Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "shelves" WHERE "shelves"."shelf_name" = $1 AND "shelves"."user_id" = $2 LIMIT $3[0m  [["shelf_name", "Reading"], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:56
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:56
+  [1m[36mShelf Create (0.8ms)[0m  [1m[32mINSERT INTO "shelves" ("shelf_name", "user_id", "created_at", "updated_at", "exclusive") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["shelf_name", "Reading"], ["user_id", 2], ["created_at", "2020-02-19 16:14:46.064397"], ["updated_at", "2020-02-19 16:14:46.064397"], ["exclusive", true]]
+  ↳ app/models/user.rb:56
+  [1m[36mShelf Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "shelves" WHERE "shelves"."shelf_name" = $1 AND "shelves"."user_id" = $2 LIMIT $3[0m  [["shelf_name", "Will Read"], ["user_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:57
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:57
+  [1m[36mShelf Create (6.0ms)[0m  [1m[32mINSERT INTO "shelves" ("shelf_name", "user_id", "created_at", "updated_at", "exclusive") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["shelf_name", "Will Read"], ["user_id", 2], ["created_at", "2020-02-19 16:14:46.072325"], ["updated_at", "2020-02-19 16:14:46.072325"], ["exclusive", true]]
+  ↳ app/models/user.rb:57
+  [1m[35m (41.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "JWang9392@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Ts_WiKqM0oZ6RkFC7bUPEw"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Jason"], ["last_name", "Wang"], ["email", "JWang9392@gmail.com"], ["password_digest", "$2a$12$wUG.l9NXOiwWCWRu5zu9bO9vDe14cfd6PknVI.r.oHFq9YJ1r1dzq"], ["session_token", "Ts_WiKqM0oZ6RkFC7bUPEw"], ["created_at", "2020-02-19 16:14:46.411627"], ["updated_at", "2020-02-19 16:14:46.411627"]]
+  ↳ db/seeds.rb:12
+  [1m[36mShelf Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "shelves" WHERE "shelves"."shelf_name" = $1 AND "shelves"."user_id" = $2 LIMIT $3[0m  [["shelf_name", "Read"], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:55
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:55
+  [1m[36mShelf Create (0.4ms)[0m  [1m[32mINSERT INTO "shelves" ("shelf_name", "user_id", "created_at", "updated_at", "exclusive") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["shelf_name", "Read"], ["user_id", 3], ["created_at", "2020-02-19 16:14:46.415205"], ["updated_at", "2020-02-19 16:14:46.415205"], ["exclusive", true]]
+  ↳ app/models/user.rb:55
+  [1m[36mShelf Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "shelves" WHERE "shelves"."shelf_name" = $1 AND "shelves"."user_id" = $2 LIMIT $3[0m  [["shelf_name", "Reading"], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:56
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:56
+  [1m[36mShelf Create (0.4ms)[0m  [1m[32mINSERT INTO "shelves" ("shelf_name", "user_id", "created_at", "updated_at", "exclusive") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["shelf_name", "Reading"], ["user_id", 3], ["created_at", "2020-02-19 16:14:46.418624"], ["updated_at", "2020-02-19 16:14:46.418624"], ["exclusive", true]]
+  ↳ app/models/user.rb:56
+  [1m[36mShelf Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "shelves" WHERE "shelves"."shelf_name" = $1 AND "shelves"."user_id" = $2 LIMIT $3[0m  [["shelf_name", "Will Read"], ["user_id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:57
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:57
+  [1m[36mShelf Create (0.4ms)[0m  [1m[32mINSERT INTO "shelves" ("shelf_name", "user_id", "created_at", "updated_at", "exclusive") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["shelf_name", "Will Read"], ["user_id", 3], ["created_at", "2020-02-19 16:14:46.421967"], ["updated_at", "2020-02-19 16:14:46.421967"], ["exclusive", true]]
+  ↳ app/models/user.rb:57
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "cindytong@aol.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "P96RM5opIe-Pp1N73oFDwA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Cindy"], ["last_name", "Tong"], ["email", "cindytong@aol.com"], ["password_digest", "$2a$12$S3GO6VSiRfTRku2qOzq6HOrPsBn69jq9Br2ZSWPghxf0GVkzCkraG"], ["session_token", "P96RM5opIe-Pp1N73oFDwA"], ["created_at", "2020-02-19 16:14:46.716749"], ["updated_at", "2020-02-19 16:14:46.716749"]]
+  ↳ db/seeds.rb:12
+  [1m[36mShelf Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "shelves" WHERE "shelves"."shelf_name" = $1 AND "shelves"."user_id" = $2 LIMIT $3[0m  [["shelf_name", "Read"], ["user_id", 4], ["LIMIT", 1]]
+  ↳ app/models/user.rb:55
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/user.rb:55
+  [1m[36mShelf Create (0.4ms)[0m  [1m[32mINSERT INTO "shelves" ("shelf_name", "user_id", "created_at", "updated_at", "exclusive") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["shelf_name", "Read"], ["user_id", 4], ["created_at", "2020-02-19 16:14:46.720501"], ["updated_at", "2020-02-19 16:14:46.720501"], ["exclusive", true]]
+  ↳ app/models/user.rb:55
+  [1m[36mShelf Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "shelves" WHERE "shelves"."shelf_name" = $1 AND "shelves"."user_id" = $2 LIMIT $3[0m  [["shelf_name", "Reading"], ["user_id", 4], ["LIMIT", 1]]
+  ↳ app/models/user.rb:56
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/user.rb:56
+  [1m[36mShelf Create (0.4ms)[0m  [1m[32mINSERT INTO "shelves" ("shelf_name", "user_id", "created_at", "updated_at", "exclusive") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["shelf_name", "Reading"], ["user_id", 4], ["created_at", "2020-02-19 16:14:46.724027"], ["updated_at", "2020-02-19 16:14:46.724027"], ["exclusive", true]]
+  ↳ app/models/user.rb:56
+  [1m[36mShelf Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "shelves" WHERE "shelves"."shelf_name" = $1 AND "shelves"."user_id" = $2 LIMIT $3[0m  [["shelf_name", "Will Read"], ["user_id", 4], ["LIMIT", 1]]
+  ↳ app/models/user.rb:57
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/user.rb:57
+  [1m[36mShelf Create (0.4ms)[0m  [1m[32mINSERT INTO "shelves" ("shelf_name", "user_id", "created_at", "updated_at", "exclusive") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["shelf_name", "Will Read"], ["user_id", 4], ["created_at", "2020-02-19 16:14:46.727332"], ["updated_at", "2020-02-19 16:14:46.727332"], ["exclusive", true]]
+  ↳ app/models/user.rb:57
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mBook Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."title" = $1 AND "books"."author" = $2 LIMIT $3[0m  [["title", "The Fellowship of the Ring"], ["author", "J.R.R. Tolkien"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:38
+  [1m[36mBook Create (1.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Fellowship of the Ring"], ["author", "J.R.R. Tolkien"], ["description", "One Ring to rule them all, One Ring to find them, One Ring to bring them all and in the darkeness bind them.\n        In ancient times the Rings of Power were crafted by the Elven-smiths, and Sauron, The Dark Lord, forged the One Ring, filling it with his own power so that he could rule all others. But the One Ring was taken from him, and though he sought it throughout Middle-earth, it remained lost to him. After many ages it fell into the hands of Bilbo Baggins, as told in The Hobbit.\n        In a sleepy village in the Shire, young Frodo Baggins finds himself faced with an immense task, as his elderly cousin Bilbo entrusts the Ring to his care. Frodo must leave his home and make a perilous journey across Middle-earth to the Cracks of Doom, there to destroy the Ring and foil the Dark Lord in his evil purpose."], ["cover_image_url", "FellowshipOfTheRing"], ["created_at", "2020-02-19 16:14:46.744209"], ["updated_at", "2020-02-19 16:14:46.744209"]]
+  ↳ db/seeds.rb:38
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mBook Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."title" = $1 AND "books"."author" = $2 LIMIT $3[0m  [["title", "The Two Towers"], ["author", "J.R.R. Tolkien"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:38
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Two Towers"], ["author", "J.R.R. Tolkien"], ["description", "The Companions of the Ring have become involved in separate adventures as the quest continues. Aragorn, revealed as the hidden heir of the ancient Kings of the West, joined with the Riders of Rohan against the forces of Isengard, and took part in the desperate victory of the Hornburg. Merry and Pippin, captured by Orcs, escaped into Fangorn Forest and there encountered the Ents. Gandalf returned, miraculously, and defeated the evil wizard, Saruman. Meanwhile, Sam and Frodo progressed towards Mordor to destroy the Ring, accompanied by SmEagol--Gollum, still obsessed by his 'precious'. After a battle with the giant spider, Shelob, Sam left his master for dead; but Frodo is still alive--in the hands of the Orcs. And all the time the armies of the Dark Lord are massing. J.R.R. Tolkien's great work of imaginative fiction has been labeled both a heroic romance and a classic fantasy fiction. By turns comic and homely, epic and diabolic, the narrative moves through countless changes of scene and character in an imaginary world which is totally convincing in its detail."], ["cover_image_url", "TwoTowers"], ["created_at", "2020-02-19 16:14:46.748651"], ["updated_at", "2020-02-19 16:14:46.748651"]]
+  ↳ db/seeds.rb:38
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mBook Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."title" = $1 AND "books"."author" = $2 LIMIT $3[0m  [["title", "The Return of the King"], ["author", "J.R.R. Tolkien"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:38
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Return of the King"], ["author", "J.R.R. Tolkien"], ["description", "The Fellowship was scattered. \n        Some were bracing hopelessly for war against the ancient evil of Sauron. Some were contending with the treachery of the wizard Saruman. Only Frodo and Sam were left to take the accursed Ring of Power to be destroyed in Mordor–the dark Kingdom where Sauron was supreme. Their guide was Gollum, deceitful and lust-filled, slave to the corruption of the Ring. \n        Thus continues the magnificent, bestselling tale of adventure begun in The Fellowship of the Ring, which reaches its soul-stirring climax in The Return of the King."], ["cover_image_url", "ReturnOfTheKing"], ["created_at", "2020-02-19 16:14:46.752278"], ["updated_at", "2020-02-19 16:14:46.752278"]]
+  ↳ db/seeds.rb:38
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mBook Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."title" = $1 AND "books"."author" = $2 LIMIT $3[0m  [["title", "Dune"], ["author", "Frank Herbert"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:38
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Dune"], ["author", "Frank Herbert"], ["description", "Set on the desert planet Arrakis, Dune is the story of the boy Paul Atreides, heir to a noble family tasked with ruling an inhospitable world where the only thing of value is the \"spice\" melange, a drug capable of extending life and enhancing consciousness. Coveted across the known universe, melange is a prize worth killing for...\n        When House Atreides is betrayed, the destruction of Paul's family will set the boy on a journey toward a destiny greater than he could ever have imagined. And as he evolves into the mysterious man known as Muad'Dib, he will bring to fruition humankind's most ancient and unattainable dream.\n        A stunning blend of adventure and mysticism, environmentalism and politics, Dune won the first Nebula Award, shared the Hugo Award, and formed the basis of what is undoubtedly the grandest epic in science fiction."], ["cover_image_url", "Dune"], ["created_at", "2020-02-19 16:14:46.755912"], ["updated_at", "2020-02-19 16:14:46.755912"]]
+  ↳ db/seeds.rb:38
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mBook Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."title" = $1 AND "books"."author" = $2 LIMIT $3[0m  [["title", "Do Robots Dream of Electric Sheep?"], ["author", "Philip K. Dick"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:38
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Do Robots Dream of Electric Sheep?"], ["author", "Philip K. Dick"], ["description", "It was January 2021, and Rick Deckard had a license to kill.\n        Somewhere among the hordes of humans out there, lurked several rogue androids. Deckard's assignment--find them and then...\"retire\" them. Trouble was, the androids all looked exactly like humans, and they didn't want to be found!"], ["cover_image_url", "DoRobotsDreamOfElectricSheep"], ["created_at", "2020-02-19 16:14:46.759512"], ["updated_at", "2020-02-19 16:14:46.759512"]]
+  ↳ db/seeds.rb:38
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mBook Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."title" = $1 AND "books"."author" = $2 LIMIT $3[0m  [["title", "The Hitchhiker's Guide to the Galaxy"], ["author", "Douglas Adams"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:38
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Hitchhiker's Guide to the Galaxy"], ["author", "Douglas Adams"], ["description", "Seconds before the Earth is demolished to make way for a galactic freeway, Arthur Dent is plucked off the planet by his friend Ford Prefect, a researcher for the revised edition of The Hitchhiker's Guide to the Galaxy who, for the last fifteen years, has been posing as an out-of-work actor.\n    Together this dynamic pair begin a journey through space aided by quotes from The Hitchhiker's Guide (\"A towel is about the most massively useful thing an interstellar hitchhiker can have\") and a galaxy-full of fellow travelers: Zaphod Beeblebrox—the two-headed, three-armed ex-hippie and totally out-to-lunch president of the galaxy; Trillian, Zaphod's girlfriend (formally Tricia McMillan), whom Arthur tried to pick up at a cocktail party once upon a time zone; Marvin, a paranoid, brilliant, and chronically depressed robot; Veet Voojagig, a former graduate student who is obsessed with the disappearance of all the ballpoint pens he bought over the years."], ["cover_image_url", "HitchhikersGuide"], ["created_at", "2020-02-19 16:14:46.763340"], ["updated_at", "2020-02-19 16:14:46.763340"]]
+  ↳ db/seeds.rb:38
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mBook Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."title" = $1 AND "books"."author" = $2 LIMIT $3[0m  [["title", "Dracula"], ["author", "Bram Stoker"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:38
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Dracula"], ["author", "Bram Stoker"], ["description", "This novel tells the story of Dracula's attempt to move from Transylvania to England so that he may find new blood and spread the undead curse, and of the battle between Dracula and a small group of men and a woman led by Professor Abraham Van Helsing."], ["cover_image_url", "Dracula"], ["created_at", "2020-02-19 16:14:46.767385"], ["updated_at", "2020-02-19 16:14:46.767385"]]
+  ↳ db/seeds.rb:38
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mBook Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."title" = $1 AND "books"."author" = $2 LIMIT $3[0m  [["title", "Necroscope"], ["author", "Brian Lumley"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:38
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Necroscope"], ["author", "Brian Lumley"], ["description", "Except to Harry Keogh, Necroscope. And what they tell him is horrifying.\n        In the Balkan mountains of Rumania, a terrible evil is growing. Long buried in hallowed ground, bound by earth and silver, the master vampire schemes and plots. Trapped in unlife, neither dead nor living, Thibor Ferenczy hungers for freedom and revenge.\n        The vampire's human tool is Boris Dragosani, part of a super-secret Soviet spy agency. Dragosani is an avid pupil, eager to plumb the depthless evil of the vampire's mind. Ferenczy teaches Dragosani the awful skills of the necromancer, gives him the ability to rip secrets from the mind and bodies of the dead.\n        Dragosani works not for Ferenczy's freedom but world domination. He will rule the world with knowledge raped from the dead.\n        His only opponent: Harry Koegh, champion of the dead and the living.\n        To protect Harry, the dead will do anything--even rise from their graves!"], ["cover_image_url", "Necroscope"], ["created_at", "2020-02-19 16:14:46.771091"], ["updated_at", "2020-02-19 16:14:46.771091"]]
+  ↳ db/seeds.rb:38
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mBook Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."title" = $1 AND "books"."author" = $2 LIMIT $3[0m  [["title", "The Exorcist"], ["author", "William Peter Blatty"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:38
+  [1m[36mBook Create (0.4ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Exorcist"], ["author", "William Peter Blatty"], ["description", "Inspired by a true story of a child’s demonic possession in the 1940s, William Peter Blatty created an iconic novel that focuses on Regan, the eleven-year-old daughter of a movie actress residing in Washington, D.C. A small group of overwhelmed yet determined individuals must rescue Regan from her unspeakable fate, and the drama that ensues is gripping and unfailingly terrifying.\n        Purposefully raw and profane, The Exorcist still has the extraordinary ability to disturb readers and cause them to forget that it is “just a story.” Published here in this beautiful fortieth anniversary edition, it remains an unforgettable reading experience and will continue to shock and frighten a new generation of readers."], ["cover_image_url", "Exorcist"], ["created_at", "2020-02-19 16:14:46.774685"], ["updated_at", "2020-02-19 16:14:46.774685"]]
+  ↳ db/seeds.rb:38
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mBook Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "books" WHERE "books"."title" = $1 AND "books"."author" = $2 LIMIT $3[0m  [["title", "Gardens of the Moon"], ["author", "Steven Erikson"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:38
+  [1m[36mBook Create (1.1ms)[0m  [1m[32mINSERT INTO "books" ("title", "author", "description", "cover_image_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Gardens of the Moon"], ["author", "Steven Erikson"], ["description", "The Malazan Empire simmers with discontent, bled dry by interminable warfare, bitter infighting and bloody confrontations with the formidable Anomander Rake and his Tiste Andii, ancient and implacable sorcerers. Even the imperial legions, long inured to the bloodshed, yearn for some respite. Yet Empress Laseen's rule remains absolute, enforced by her dread Claw assassins.\n        For Sergeant Whiskeyjack and his squad of Bridgeburners, and for Tattersail, surviving cadre mage of the Second Legion, the aftermath of the siege of Pale should have been a time to mourn the many dead. But Darujhistan, last of the Free Cities of Genabackis, yet holds out. It is to this ancient citadel that Laseen turns her predatory gaze.\n        However, it would appear that the Empire is not alone in this great game. Sinister, shadowbound forces are gathering as the gods themselves prepare to play their hand...\n        Conceived and written on a panoramic scale, Gardens of the Moon is epic fantasy of the highest order--an enthralling adventure by an outstanding new voice."], ["cover_image_url", "GardensOfTheMoon"], ["created_at", "2020-02-19 16:14:46.778424"], ["updated_at", "2020-02-19 16:14:46.778424"]]
+  ↳ db/seeds.rb:38
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mShelf Load (1.1ms)[0m  [1m[34mSELECT "shelves".* FROM "shelves"[0m

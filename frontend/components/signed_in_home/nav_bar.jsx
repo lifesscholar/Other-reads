@@ -5,7 +5,9 @@ const NavBar = ({ signout }) => {
   return (
     <nav className="signedin-masthead-container">
       <div className="left-nav">
-        <h4>Other Reads</h4>
+        <Link to="/" className="nav-logo-link">
+          <img src={window.Logo} alt="Other Reads Logo" className="nav-logo" />
+        </Link>
         <ul className="nav-buttons">
           <li>
             <Link to="/" className="nav-link">Home</Link>

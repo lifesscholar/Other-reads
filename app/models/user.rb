@@ -21,6 +21,7 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6 }, allow_nil: true
 
   after_initialize :ensure_session_token
+  after_create :default_shelves
 
   has_many :shelves, 
     class_name: :Shelf, 
@@ -49,6 +50,12 @@ class User < ApplicationRecord
   end
 
   private
+
+  def default_shelves
+    Shelf.create(shelf_name: "Read", exclusive: true, user_id: self.id)
+    Shelf.create(shelf_name: "Reading", exclusive: true, user_id: self.id)
+    Shelf.create(shelf_name: "Will Read", exclusive: true, user_id: self.id)
+  end
 
   def ensure_session_token
     self.session_token ||= SecureRandom.urlsafe_base64
