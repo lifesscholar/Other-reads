@@ -13,7 +13,7 @@ class BookIndexItem extends React.Component {
     this.props.history.push(`/books/${bookId}`);
   }
 
-  render (){
+  render() {
     const { id, picture_url } = this.props.book;
     return (
       <li className="book-index-item">

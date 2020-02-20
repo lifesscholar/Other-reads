@@ -1,3 +1,109 @@
 // Place all the styles related to the api/shelves controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.bookshelf-container {
+  width: 100%;
+  padding-bottom: 25px;
+  margin: 15px 0 0 5px;
+}
+
+.bookshelf {
+  margin: 0 auto;
+  text-align: left;
+  width: 970px;
+}
+
+.bookshelf-title {
+  font-size: 20px;
+  color: #00635d;
+  font-weight: bold;
+  // font-family: "Merriweather", Georgia, "Times New Roman", serif;
+  font-family: 'Merriweather', serif;
+  padding-bottom: 9px;
+  border-bottom: 1px solid #BBB596;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.shelves-index {
+  list-style: none;
+  float: left;
+  width: 15%;
+  border-bottom: solid 1px #D8D8D8;
+}
+
+.shelves-index-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.shelf-index-item {
+  text-decoration: none;
+  color: #00635d;
+  font-size: 16px;
+}
+
+.shelf-index-item:hover {
+  text-decoration: underline;
+}
+
+.shelves-index li:nth-child(4){
+  padding-bottom: 5px;
+  border-bottom: solid 1px #D8D8D8;
+}
+
+.add-shelf-button {
+  border-radius: 3px;
+  border: 1px solid #D6D0C4;
+  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+  cursor: pointer;
+  font-size: 11px;
+  padding: 4px 12px;
+  background-color: #F4F1EA;
+  line-height: 1;
+  margin: 9px 0;
+}
+
+.add-shelf-form {
+  display: block;
+  margin-top: 9px;
+  font-size: 14px;
+}
+
+.add-shelf-name {
+  width: 60%;
+  padding: 2px;
+  height: 15px;
+}
+
+.add-shelf-button-add {
+  border-radius: 3px;
+  border: 1px solid #D6D0C4;
+  font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+  cursor: pointer;
+  font-size: 11px;
+  padding: 4px 12px;
+  background-color: #F4F1EA;
+  line-height: 1;
+  margin: 0 0 9px 4px;
+}
+
+.delete-shelf-button {
+  border: transparent;
+  background-color: transparent;
+  font-size: 14px;
+  cursor: pointer;
+  padding-left: 0;
+  color: white;
+}
+
+.delete-shelf-button:focus {
+  box-shadow: 0 0 0;
+  border-color: transparent;
+  outline: 0;
+}
+
+.delete-shelf-button:hover {
+  color: #999999;
+}

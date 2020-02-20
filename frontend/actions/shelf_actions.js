@@ -41,6 +41,7 @@ export const fetchShelves = () => dispatch => {
 };
 
 export const fetchShelf = shelfId => dispatch => {
+  debugger
   return APIUtil.fetchShelf(shelfId)
   .then( shelf => dispatch(receiveShelf(shelf))
   );

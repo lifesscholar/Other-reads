@@ -13,7 +13,7 @@ const SignedOutNavBar = ({ signout }) => {
             <Link to="/" className="nav-link">Home</Link>
           </li>
           <li>
-            <Link to="/" className="nav-link">My Books</Link>
+            <Link to="/shelves" className="nav-link">My Books</Link>
           </li>
           <li>
             <div className="nav-link">Browse</div>
