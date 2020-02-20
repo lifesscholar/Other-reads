@@ -4,7 +4,8 @@ import BookShow from "./book_show";
 
 const mSTP = (state, ownProps) => {
   return {
-    book: state.entities.books[ownProps.match.params.bookId]
+    book: state.entities.books[ownProps.match.params.bookId],
+    currentUser: state.session.id
   };
 };
 

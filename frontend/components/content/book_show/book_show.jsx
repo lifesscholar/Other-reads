@@ -1,13 +1,32 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ShelvedBookDropdownContainer from "../shelved_book_dropdown/shelved_book_dropdown_container";
 
 class BookShow extends React.Component {
   constructor(props) {
     super(props);
+
+    this.userExists = this.userExists.bind(this);
   }
 
   componentWillMount() {
     this.props.fetchBook(this.props.match.params.bookId);
+  }
+
+  userExists() {
+    if (this.props.currentUser) {
+      return (
+        <>
+          <ShelvedBookDropdownContainer book = { this.props.book }/>
+        </>
+      );
+    } else {
+      return (
+        <span className="shelved-dropdown-signedout">
+          Sign in to add to your shelf
+        </span>
+      )
+    }
   }
 
   render () {
@@ -21,6 +40,7 @@ class BookShow extends React.Component {
         <div className="book-sidebar">
           <img src={eval(`window.${picture_url}`)} alt={book.picure_url} className="book-cover"/>
           <Link to="/books" className="back-to-book-index">Back to Book Index</Link>
+          {this.userExists()}
         </div>
         <div className="book-info">
           <h2 className="book-title">{book.title}</h2>

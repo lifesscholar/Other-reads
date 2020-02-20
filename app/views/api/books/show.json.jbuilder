@@ -1,3 +1,1 @@
-json.book do
-  json.partial! "/api/books/book", book: @book
-end
+json.partial! "/api/books/book", book: @book

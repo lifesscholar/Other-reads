@@ -5,19 +5,17 @@ import {
  } from "../actions/shelf_actions";
 
  const shelfReducer = (state = {}, action) => {
-   debugger
    Object.freeze(state);
     let newState;
    switch (action.type) {
      case RECEIVE_SHELVES:
        return action.shelves;
      case RECEIVE_SHELF:
-      newState ={ [action.shelf.shelf.id]: action.shelf.shelf };
+      newState ={ [action.shelf.id]: action.shelf };
       return Object.assign({}, state, newState);
     case REMOVE_SHELF:
-      debugger
       newState = Object.assign({}, state);
-      delete newState[action.shelfId.shelf.id];
+      delete newState[action.shelfId];
       return newState;
      default:
        return state;

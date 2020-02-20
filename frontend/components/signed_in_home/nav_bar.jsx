@@ -16,7 +16,7 @@ const NavBar = ({ signout }) => {
             <Link to="/shelves" className="nav-link">My Books</Link>
           </li>
           <li>
-            <div className="nav-link">Browse</div>
+            <Link to="/books" className="nav-link">Browse</Link>
           </li>
         </ul>
       </div>

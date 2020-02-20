@@ -60,7 +60,7 @@ export const updateShelf = shelf => dispatch => {
 
 export const deleteShelf = shelfId => dispatch => {
   return APIUtil.removeShelf(shelfId)
-  .then( shelfId => dispatch(removeShelf(shelfId))
+  .then( () => dispatch(removeShelf(shelfId))
   );
 };
 

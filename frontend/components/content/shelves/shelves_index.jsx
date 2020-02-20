@@ -64,7 +64,6 @@ class ShelvesIndex extends React.Component {
   }
 
   render () {
-    debugger
     const { shelves, deleteShelf } = this.props;
 
     if (shelves.length < 1) {
