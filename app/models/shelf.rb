@@ -23,7 +23,7 @@ class Shelf < ApplicationRecord
     foreign_key: :shelf_id
 
   has_many :books,
-  through: :shelved_books, 
-  source: :book
+    through: :shelved_books, 
+    source: :book
 
 end

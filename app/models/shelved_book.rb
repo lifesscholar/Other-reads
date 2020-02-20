@@ -15,9 +15,14 @@ class ShelvedBook < ApplicationRecord
 
   belongs_to :book, 
     class_name: :Book, 
-    foreign_key: :book_id
+    foreign_key: :book_id                  
 
   belongs_to :shelf,
     class_name: :Shelf,
     foreign_key: :shelf_id
+
+  has_one :user,
+    through: :shelf,
+    source: :user
+    
 end
