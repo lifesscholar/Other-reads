@@ -6,6 +6,12 @@ class ShelfIndexItem extends React.Component {
     super(props);
 
     this.exclusiveSwitch = this.exclusiveSwitch.bind(this);
+    this.deleteShelf = this.deleteShelf.bind(this);
+  }
+
+  deleteShelf() {
+    debugger
+    this.props.deleteShelf(this.props.shelf.id);
   }
 
   exclusiveSwitch() {
@@ -14,7 +20,7 @@ class ShelfIndexItem extends React.Component {
     } else {
       return (
         <button 
-          onClick={ () => this.props.deleteShelf(this.props.shelf.id)}
+          onClick={ () => this.deleteShelf()}
           className="delete-shelf-button"
         >X</button>
       )

@@ -1,8 +1,7 @@
 import React from "react";
 import ShelvesIndex from "./shelves_index";
-import { deleteShelf } from "../../../actions/shelf_actions";
 
-const MyBooks = ({ shelves, fetchShelves, createShelf }) => {
+const MyBooks = ({ shelves, fetchShelves, createShelf, deleteShelf }) => {
   return (
     <div className="bookshelf-container">
       <ShelvesIndex

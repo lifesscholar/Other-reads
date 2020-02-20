@@ -41,7 +41,6 @@ export const fetchShelves = () => dispatch => {
 };
 
 export const fetchShelf = shelfId => dispatch => {
-  debugger
   return APIUtil.fetchShelf(shelfId)
   .then( shelf => dispatch(receiveShelf(shelf))
   );
@@ -60,8 +59,9 @@ export const updateShelf = shelf => dispatch => {
 };
 
 export const deleteShelf = shelfId => dispatch => {
+  debugger
   return APIUtil.removeShelf(shelfId)
-  .then( () => dispatch(removeShelf(shelfId))
+  .then( shelfId => dispatch(removeShelf(shelfId))
   );
 };
 

@@ -1,6 +1,5 @@
 import React from "react";
 import ShelfIndexItem from "./shelves_index_item";
-import { deleteShelf } from "../../../actions/shelf_actions";
 
 class ShelvesIndex extends React.Component {
   constructor(props) {
@@ -65,7 +64,8 @@ class ShelvesIndex extends React.Component {
   }
 
   render () {
-    const { shelves } = this.props;
+    debugger
+    const { shelves, deleteShelf } = this.props;
 
     if (shelves.length < 1) {
       return null;

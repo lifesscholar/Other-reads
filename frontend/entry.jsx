@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import configureStore from "./store/store";
 import Root from "./components/root";
-import { fetchShelves, fetchShelf, deleteShelf } from "./actions/shelf_actions";
+import { removeShelf} from "./util/shelf_api_util";
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -24,12 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  // window.signin = signin;
-  // window.signout = signout;
-  // window.signup = signup;
-  window.fetchShelves = fetchShelves;
-  window.fetchShelf = fetchShelf;
-  window.deleteShelf = deleteShelf;
+
+  window.removeShelf = removeShelf;
 
   ReactDOM.render(< Root store={store}/>, root);
 });

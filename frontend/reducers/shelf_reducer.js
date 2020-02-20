@@ -1,8 +1,7 @@
 import { 
   RECEIVE_SHELVES,
   RECEIVE_SHELF,
-  REMOVE_SHELF,
-  deleteShelf
+  REMOVE_SHELF
  } from "../actions/shelf_actions";
 
  const shelfReducer = (state = {}, action) => {
