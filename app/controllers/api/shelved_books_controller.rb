@@ -19,6 +19,17 @@ class Api::ShelvedBooksController < ApplicationController
     end
   end
 
+  def update
+    @shelved_book = ShelvedBook.find(params[:id])
+
+    if @shelved_book.update(shelved_book_params)
+      render :show
+    else
+      render json: @shelved_book.errors.full_messages, status: 406
+    end
+    
+  end
+
   private
 
   def shelved_book_params

@@ -10,7 +10,6 @@ class ShelfIndexItem extends React.Component {
   }
 
   deleteShelf() {
-    debugger
     this.props.deleteShelf(this.props.shelf.id);
   }
 

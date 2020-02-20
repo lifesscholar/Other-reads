@@ -15,8 +15,9 @@ import {
       newState ={ [action.shelf.shelf.id]: action.shelf.shelf };
       return Object.assign({}, state, newState);
     case REMOVE_SHELF:
+      debugger
       newState = Object.assign({}, state);
-      delete newState[action.shelfId];
+      delete newState[action.shelfId.shelf.id];
       return newState;
      default:
        return state;

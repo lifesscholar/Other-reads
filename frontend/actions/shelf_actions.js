@@ -59,7 +59,6 @@ export const updateShelf = shelf => dispatch => {
 };
 
 export const deleteShelf = shelfId => dispatch => {
-  debugger
   return APIUtil.removeShelf(shelfId)
   .then( shelfId => dispatch(removeShelf(shelfId))
   );
