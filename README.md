@@ -1,13 +1,7 @@
 # Other Reads: A Goodreads Clone
 
-<<<<<<< HEAD
 [Other Reads](https://other-reads.herokuapp.com/#/  "Other Reads")
-=======
-##
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
->>>>>>> 1037f8f4eae0832288dc50cb253bd9c660a523ed
+#
 
 **Other Reads is a clone of GoodReads.com focused on sepeculative fiction books, such as science fiction, fantasy, or horror.**
 
