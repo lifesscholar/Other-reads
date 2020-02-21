@@ -15,15 +15,19 @@ class Shelf < ApplicationRecord
   validates :shelf_name, uniqueness: { scope: :user_id }
 
   belongs_to :user, 
-    class_name: :User, 
+    class_name: :User,
+    primary_key: :id, 
     foreign_key: :user_id
 
   has_many :shelved_books, 
     class_name: :ShelvedBook, 
+    primary_key: :id,
     foreign_key: :shelf_id
 
   has_many :books,
     through: :shelved_books, 
     source: :book
+
+  self.table_name = "shelves"
 
 end

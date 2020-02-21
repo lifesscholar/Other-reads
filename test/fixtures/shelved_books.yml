@@ -3,10 +3,10 @@
 # Table name: shelved_books
 #
 #  id         :bigint           not null, primary key
-#  shelf_id   :string           not null
-#  book_id    :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  shelf_id   :integer
+#  book_id    :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
