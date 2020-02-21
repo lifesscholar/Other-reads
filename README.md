@@ -1,10 +1,8 @@
 # Other Reads: A Goodreads Clone
 
-[Other Reads](https://other-reads.herokuapp.com/#/  "Other Reads")
-#
+# [Other Reads](https://other-reads.herokuapp.com/#/  "Other Reads")
 
 **Other Reads is a clone of GoodReads.com focused on sepeculative fiction books, such as science fiction, fantasy, or horror.**
-
 #
 
 ## Key Features:
@@ -12,6 +10,9 @@
 ### User Authentication
   * Users can create an account using their full name, email, and a password with a minimum of 6 characters.
   * Users can then securely sign in and sign out.
+
+### Demo User
+  * Users can use the demo user button underneath the Sign In form to view internal features
 
 ### Browse Books
   * Anyone can look through the catalog of books uploaded
@@ -42,7 +43,7 @@
   * HTML
   * CSS
 
-  ### Frameworks and Modules
+  ### Frameworks, Modules, and Libraries
   * Ruby on Rails
   * React
   * Redux
