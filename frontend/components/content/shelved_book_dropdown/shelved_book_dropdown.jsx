@@ -41,11 +41,13 @@ class ShelvedBookDropdown extends React.Component {
     });
   }
 
-  // addBookToShelf (newShelf) {
-  //   if (this.props.book.shelves.includes(newShelf)) {
-      
-  //   }
-  // }
+  addBookToShelf (newShelf) {
+    if (this.props.book.shelves.includes(newShelf)) {
+      this.props.updateShelvedBook(newShelf);
+    } else {
+      this.props.createShelvedBook(newShelf);
+    }
+  }
 
   
  
