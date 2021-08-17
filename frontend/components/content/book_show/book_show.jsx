@@ -23,7 +23,9 @@ class BookShow extends React.Component {
     } else {
       return (
         <span className="shelved-dropdown-signedout">
-          Sign in to add to your shelf
+          Sign in to add
+          <br/>
+          to your shelves
         </span>
       )
     }

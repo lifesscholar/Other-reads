@@ -66,9 +66,6 @@
   display: inline-block;
 }
 
-.shelved-dropdown-signedout {
-  font-size: 12px;
-}
 
 .shelved-dropdown span {
   padding: 6px 6px 7px 8px;
@@ -115,4 +112,13 @@
   width: 132px;
   z-index: 2;
   max-height: 250px;
+}
+
+.shelved-button {
+  padding: 6px 0 7px 8px;
+  cursor: pointer;
+}
+
+.shelved-button:hover {
+  background-color: #f1f1f1
 }
