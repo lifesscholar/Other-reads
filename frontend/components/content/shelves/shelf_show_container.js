@@ -5,7 +5,7 @@ import MyBooks from "./my_books";
 const mSTP = (state) => {
   return {
     shelves: Object.values(state.entities.shelves),
-    // shelf: state.entities.shelves[OwnProps.match.params.shelfId]
+    shelf: state.entities.shelves[OwnProps.match.params.shelfId]
   };
 };
 

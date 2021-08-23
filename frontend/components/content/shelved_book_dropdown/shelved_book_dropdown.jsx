@@ -42,11 +42,12 @@ class ShelvedBookDropdown extends React.Component {
   }
 
   addBookToShelf (newShelf) {
-    if (this.props.book.shelves.includes(newShelf)) {
-      this.props.updateShelvedBook(newShelf);
-    } else {
-      this.props.createShelvedBook(newShelf);
-    }
+    // debugger
+    // if (this.props.book.shelves.includes(newShelf)) {
+    //   this.props.updateShelvedBook(newShelf);
+    // } else {
+    //   this.props.createShelvedBook(newShelf);
+    // }
   }
 
   
@@ -70,7 +71,7 @@ class ShelvedBookDropdown extends React.Component {
               {shelves.map(shelf => (
                 <li
                   key={shelf.id} className="shelved-button"
-                // onClick={this.addBookToShelf(shelf)}
+                  onClick={this.addBookToShelf(shelf)}
                 >{shelf.shelf_name}</li>
               ))}
             </ul>

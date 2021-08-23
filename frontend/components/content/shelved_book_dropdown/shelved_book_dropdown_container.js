@@ -7,6 +7,7 @@ const mSTP = (state, ownProps) => {
   return {
     book: ownProps.book,
     shelves: Object.values(state.entities.shelves),
+    // shelvedBooks: 
   };
 };
 
