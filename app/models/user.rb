@@ -24,8 +24,10 @@ class User < ApplicationRecord
   after_create :default_shelves
 
   has_many :shelves, 
-    class_name: :Shelf, 
+    class_name: :Shelf,
+    primary_key: :id,
     foreign_key: :user_id
+
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
@@ -60,5 +62,7 @@ class User < ApplicationRecord
   def ensure_session_token
     self.session_token ||= SecureRandom.urlsafe_base64
   end
+
+  self.table_name = "users"
 
 end
